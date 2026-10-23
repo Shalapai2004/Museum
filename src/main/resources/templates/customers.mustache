@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+{{> fragment }}
+    <div>
+    <form method="post" action="/customers/add">
+            <input type = "text" name = "name" placeholder = "Введите имя заказчика"/>
+        <button type="submit">Добавить</button><br><br>
+
+    </form>
+    </div>
+    <form method="post" action="/customers">
+        <input type = "text" name = "filter">
+        <button type = "submit">Найти</button><br><br>
+    </form>
+   <!-- <form method="post" action="filterId">
+        <input type = "text" name = "filterId">
+        <button type = "submit">Найти</button>
+    </form> -->
+    <form method="post" action="/customers/delete">
+        <input type = "number" name = "delete">
+        <button type = "submit">Удалить</button><br><br>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#customers}}
+            <tr>
+                <td>{{id}}</td>
+                <td> <a href="customers/{{id}}">{{name}}</a></td>
+            </tr>
+        {{/customers}}
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>

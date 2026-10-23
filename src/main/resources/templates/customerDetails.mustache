@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{> fragment}}
+
+    {{#customers}}
+        <div>
+
+        <h1>ID : {{id}}</h1>
+        <h1>Name : {{name}}</h1>
+        <a href="/customers/{{id}}/edit">Редактировать </a><br><br>
+            <form action="/customers/{{id}}/remove" method="post">
+                <button type="submit">Удалить</button>
+            </form>
+
+        </div>
+    {{/customers}}
+
+</body>
+</html>

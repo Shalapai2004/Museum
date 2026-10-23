@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+{{> fragment }}
+
+<form method="post" action="exhibits/add">
+    <input type = "text" name = "name" placeholder = "Введите название Экспоната"/>
+    <input type = "text" name = "description" placeholder = "Введите описание Экспоната"/>
+    <input type = "number" name = "quantity" placeholder = "Введите количество таких Экспонатов"/>
+    <button type="submit">Добавить</button><br><br>
+</form>
+
+<form method="post" action="/exhibits">
+    <input type = "text" name = "filter">
+    <button type = "submit">Найти</button><br><br>
+</form>
+
+<form method="post" action="exhibits/delete">
+    <input type = "number" name = "delete">
+    <button type = "submit">Удалить</button><br><br>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#exhibits}}
+        <tr>
+            <td>{{id}}</td>
+            <td> <a href="exhibits/{{id}}">{{name}}</a></td>
+        </tr>
+    {{/exhibits}}
+    </tbody>
+</table>
+</body>
+</html>

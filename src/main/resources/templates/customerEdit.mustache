@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование </title>
+</head>
+<body>
+{{> fragment }}
+
+<form method="post">
+    {{#customers}}
+    <input type = "text" name = "name" value="{{name}}"  placeholder = "Обновите имя Клиента"/>
+    <button type="submit">Обновить</button>
+
+    {{/customers}}
+</form>
+</body>
+</html>

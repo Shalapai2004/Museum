@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requests</title>
+</head>
+<body>
+{{> fragment }}
+
+<form method="post" action="requests/add">
+    <input type = "date" name = "exhibition_date_start" placeholder = "Введите название Экспоната"/>
+    <input type = "date" name = "exhibition_date_end" placeholder = "Введите описание Экспоната"/>
+    <input type = "number" name = "quantity" placeholder = "Введите количество таких Экспонатов"/>
+    <button type="submit">Добавить</button><br><br>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Статус</th>
+        <th>Дата начала выставки</th>
+        <th>Дата конца выставки</th>
+        <th>ID Заказчика</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#requests}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{status}}</td>
+            <td>{{exhibition_date_start}}</td>
+            <td>{{exhibition_date_end}}</td>
+            <td> <a href="customers/{{customers.id}}">{{customers.name}}</a></td>
+        </tr>
+    {{/requests}}
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>
